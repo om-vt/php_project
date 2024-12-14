@@ -3,7 +3,7 @@
 // $str="hii this is ram   "; // strlen(varibale); use for geting string lenght.
 // echo strlen($str);
 // echo $a= trim($str);       
-//any method have old version but we use the method in new version its show waring decrepeted error.
+//note:-any method which support  old version but we use the method in new version its show waring decrepeted error.
 //ltrim->use to trim left side whitespace and return modify string.
 //rtrim->use to trim right side whitespace and return modify string.
 //str_repeat(string,time)-> it repeat string for given time and return repeted string.
