@@ -103,7 +103,22 @@
 
 // primeCheck(28);
 
-
+//===================return type=with paramiter========================
+// function cal($a,$b,$op){    //requared paramiter type function like:$a,$b,$op
+//     switch($op){
+//         case '+':
+//             return $a+$b;   // return ke bd ke line nahi chlte h // return value ko hold krke rkhta hai//
+//         case '-':
+//             return $a-$b;
+//         case '*':
+//             return $a*$b;
+//         case '/':
+//             return $a/$b;
+//         case '%':
+//             return $a%$b;
+//     }
+// }
+// echo(cal(5,8,'+'));
 
 
 
