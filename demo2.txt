@@ -1,3 +1,6 @@
 1fwrite function used to create a file and write 
 some text inside created file101fwrite function used to create a file and write 
-some text inside created file10
+some text inside created file101fwrite function used to create a file and write 
+some text inside created file10it is demo file.it is demo file.it is demo file.it is demo file.
+it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is demo file.it is
+ demo file.it is demo file.it is demo file.it is demo file.this is read append and write mode.this is read append and write mode.
