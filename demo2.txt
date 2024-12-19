@@ -1,0 +1,3 @@
+1fwrite function used to create a file and write 
+some text inside created file101fwrite function used to create a file and write 
+some text inside created file10
