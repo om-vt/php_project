@@ -29,11 +29,31 @@ if($con){
 // mysqli_multi_query($con,$sql);
 
 //==================================================
-$sql="Insert into users(name,email) values('kumar','kumar@gmail.com')";
-if(mysqli_query($con,$sql)){
-    echo mysqli_insert_id($con);
-}
+// $sql="Insert into users(name,email) values('kumar','kumar@gmail.com')";
+// if(mysqli_query($con,$sql)){
+//     echo mysqli_insert_id($con);
+// }
 
+// $sql ="Delete from users where id=8";
+// echo mysqli_query($con,$sql);
+// echo mysqli_affected_rows($con);    
 
+//  $sql= "select * from users";
+// // print_r(mysqli_query($con,$sql));
+//  $result = mysqli_query($con,$sql);
+//  echo mysqli_num_rows($result);
+//  echo "<pre>";
+//  print_r(mysqli_fetch_all($result,MYSQLI_ASSOC));
+//  print_r(mysqli_fetch_all($result,MYSQLI_BOTH));
+//  print_r(mysqli_fetch_all($result,MYSQLI_ASSOC)[0]['name']);
+// print_r(mysqli_fetch_assoc($result));
+//while($record = mysqli_fetch_assoc($result)){
+    // print_r($record)
+    // print_r($record['name']);    // its return all name from table record name col.
+//}
+
+$sql ="update users set name='ramkumar' where id=4";
+mysqli_query($con,$sql);
+echo mysqli_affected_rows($con);
 
 ?>
