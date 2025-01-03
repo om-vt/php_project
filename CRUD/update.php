@@ -39,7 +39,7 @@ if(isset($_GET['id'])){
     $result= mysqli_query($con,$sql);
     if(mysqli_num_rows($result)>0){
         $data = mysqli_fetch_assoc($result);
-        // print_r($da)
+        // print_r($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
