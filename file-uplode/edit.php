@@ -40,7 +40,7 @@
         name: <input type="text" value="<?=$single['name']?>" name="name">
         file: <input type="file" name="image">
         <input type="hidden" value="<?=$single['image']?>" name="oldimage"/>
-        <img src="file-uplode/<?=$single['image']?>" alt="" height="50px" width="50px">
+        <img src="uplode-img/<?=$single['image']?>" alt="" height="50px" width="50px">
         <br>
         <button type="submit">Submit</button>
     </form>
