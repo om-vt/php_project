@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION['user'])){
+    header('Location:FORM-CREATE.PHP');
+}
 $con =mysqli_connect('localhost','root','','app25_crud');
 if($_SERVER['REQUEST_METHOD']=='POST'){
     if(empty($_POST['fname'])){

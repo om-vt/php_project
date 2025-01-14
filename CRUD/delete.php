@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION['user'])){
+    header('Location:FORM-CREATE.PHP');
+}
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $con = mysqli_connect('localhost','root','' ,'app25_crud');

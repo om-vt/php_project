@@ -1,60 +1,29 @@
 <?php
+//sessiontimeset=30;
+// ini_set('session.gc_maxlifetime',30);
 session_start();
 if(isset($_SESSION['user'])){
-    header('Location:FORM-CREATE.PHP');
+    header('Location:form-read.PHP');
 }
-
-$con=mysqli_connect('localhost','root','','app25_crud');
 if($_SERVER['REQUEST_METHOD']=='POST'){
-    if(empty($_POST['fname'])){
-        echo "<script>
-        alert('First name must be required');
-        </script>";
-    }elseif(empty($_POST['lname'])){
-        echo "<script>
-        alert('last name must be required');
-        </script>";
-    }elseif(empty($_POST['phone'])){
-        echo "<script>
-        alert('phone must be required');
-        </script>";
-    }elseif(empty($_POST['email'])){
-        echo "<script>
-        alert('email must be required');
-        </script>";
-    }else{
-        $id=$_POST['uid'];
-        $fname=$_POST['fname'];
-        $lname=$_POST['lname'];
-        $phone=$_POST['phone'];
-        $email=$_POST['email'];
-        $sql ="Update users set fname='$fname',lname='$lname',phone='$phone',email='$email' where id=$id";
-        if(mysqli_query($con,$sql)){
-            echo "<script>
-            alert('account update successfully');
-            window.location.href='form-read.php';
-            </script>";
-        }
-
+    $email = $_POST['email'];
+    $password= $_POST['password'];
+    if($email=='admin@gmail.com' && $password=='1234567890'){
+        $_SESSION['user']=$email;
+        header('Location:form-read.php');
     }
 }
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
-    $sql="Select * from users where id=$id";
-    $result= mysqli_query($con,$sql);
-    if(mysqli_num_rows($result)>0){
-        $data = mysqli_fetch_assoc($result);
-        // print_r($data);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <style>
+<style>
     * {
         margin: 0px;
         padding: 0px;
@@ -69,7 +38,7 @@ if(isset($_GET['id'])){
     }
 
     .main-container {
-        min-height: 400px;
+        min-height: 200px;
         width: 100%;
         max-width: 800px;
         background-color: #eeeeee;
@@ -206,58 +175,48 @@ if(isset($_GET['id'])){
             margin-right: 0px;
         }
     }
-    </style>
+</style>
 </head>
 
 <body>
     <div class="main-container">
         <!-- Form Section Start -->
         <form action="" method="post">
-        <input type="hidden" value="<?= $data['ID']?>" name="uid"/>
-            <h2 class="reg-heading"> UPDATE PAGE</h2>
+            <h2 class="reg-heading"> LOGIN</h2>
 
-            <div class="input-row">
-                <div class="input-box" >
-                   
-                    <label for="name" class="reg-label">First Name:</label>
-                    <input type="text"  value="<?= $data['fname']?>" name="fname" class="reg-input">
-                </div>
-                <div class="input-box">
-                    <label for="name" class="reg-label">Last Name:</label>
-                    <input type="text" value="<?= $data['lname']?>" name="lname" class="reg-input">
-                </div>
 
-            </div>
 
 
             <div class="input-row">
 
-                <div class="input-box">
-                    <label for="name" class="reg-label">Phone:</label>
-                    <input type="text"value="<?= $data['phone']?>" name="phone" class="reg-input">
-                </div>
+                <!-- <div class="input-box"> 
+                        <label for="name" class="reg-label">Phone:</label>
+                        <input type="text" name="phone"  class="reg-input">
+                    </div> -->
                 <div class="input-box">
                     <label for="name" class="reg-label">Email:</label>
-                    <input type="email" value="<?= $data['email']?>" name="email" class="reg-input">
+                    <input type="email" name="email" class="reg-input">
                 </div>
+               <div class="input-box"> 
+                        <label for="name" class="reg-label">Phone:</label>
+                        <input type="text" name="password"  class="reg-input">
+                    </div>
 
             </div>
+
+
+
+
             <!-- <div class="button"> -->
             <div class="button">
-                <button type="submit" class="reg-button">UPDATE ACCOUNT</button>
+                <button type="submit" class="reg-button">LOGIN</button>
             </div>
             <!-- </div> -->
-           
+
         </form>
         <!-- Form Section End -->
     </div>
 
 </body>
-</html>
-<?php
-}
-    }else{
-    header('Location:form-read.php');
-}
 
-?>
+</html>

@@ -10,22 +10,21 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     $descreption=$_POST['description'];
 
-$sql ="update all users2 username='$username',dob='$dob',gender='$gender',options='$options',subject='$subject' where"
 
-    
-}
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
-    $sql = "Select * from  users2 where id=$id";
-    $single= mysqli_query($con,$sql);
-    if(mysqli_num_rows($single)>0){
-        $result= mysqli_fetch_assoc($single);
-        $subject= explode(',',$result['subject']);
-    }
-}else{
-    header('Location:read.php');
-}
+$sql ="update all users2 username='$username',dob='$dob',gender='$gender',options='$options',subject='$subject' where id=$id";
+        if(isset($_GET['id'])){
+            $id=$_GET['id'];
+            $sql = "Select * from  users2 where id=$id";
+            $single= mysqli_query($con,$sql);
+            if(mysqli_num_rows($single)>0){
+                $result= mysqli_fetch_assoc($single);
+                $subject= explode(',',$result['subject']);
+            }
+        }else{
+            header('Location:read.php');
+        }
 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +32,7 @@ if(isset($_GET['id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>update Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQnEFeAZ43zxb1sci3PDC1mSjL1UCoDN9kJv2IZFAAz+6qqlyGd8/oz1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f8f9fa;
@@ -121,6 +120,6 @@ if(isset($_GET['id'])){
         </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoWtFBw+ARxtK5pHtNJUE6ErwzzrHz91o+2doUJjrxYr7N9" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

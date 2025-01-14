@@ -1,1 +1,5 @@
 move_uploaded_file()
+cookies: cookies was a small data. cookies was some storeage data on client browser which install by webserver. we can set data 4kb max.
+
+session: it small data(temporeary data) it use to go one page to another page . it store data on webserver for 24min  (time is 24 min). 
+session_start()

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])){
+    header('Location:loginpage.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +23,8 @@
 
 <body>
     <a href="FORM-CREATE.PHP" class="btn btn-primary">Create data</a>
+    <a href="FORM-CREATE.PHP" id="logout" class="btn btn-info float-end">logout</a>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -52,6 +60,12 @@
     ?>
     </tbody>
     </table>
+    <script>
+        var log = document.getElementById('logout');
+        setTimeout(() => {
+            log.click();
+        }, 20000);
+    </script>
 </body>
 
 </html>
